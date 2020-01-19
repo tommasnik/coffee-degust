@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "coffee-degust",
+    "coffee-degust": "coffee-degust"
+  }
+}
