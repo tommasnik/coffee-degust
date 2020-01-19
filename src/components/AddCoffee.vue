@@ -22,13 +22,13 @@
 import { mapMutations, mapState, mapActions } from 'vuex'
 
 export default {
-  computed: mapState('coffee', [
+  computed: mapState('coffees', [
     'coffeeNameToCreate',
     'coffeeCreationPending'
   ]),
   methods: {
-    ...mapMutations('coffee', ['setCoffeeNameToCreate']),
-    ...mapActions('coffee', ['triggerAddCoffeeAction'])
+    ...mapMutations('coffees', ['setCoffeeNameToCreate']),
+    ...mapActions('coffees', ['triggerAddCoffeeAction'])
   }
 }
 </script>
