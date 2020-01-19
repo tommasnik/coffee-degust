@@ -8,7 +8,7 @@
     <div class="links">
       <nav class="nav-links">
         <div class="nav-item">
-          <router-link to="/products">Products</router-link>
+          <router-link v-if="isUserLoggedIn" to="/coffees">Kafe</router-link>
         </div>
         <div v-if="!isUserLoggedIn && networkOnLine" class="nav-item">
           <router-link to="/login">Login</router-link>

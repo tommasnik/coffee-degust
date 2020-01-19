@@ -1,4 +1,4 @@
-import getters from '@/store/products/products.getters'
+import getters from '@/store/coffees/coffees.getters'
 
 const state = { productDeletionPending: [1, 2, 3] }
 

@@ -1,19 +1,19 @@
 <template>
-  <div class="product-action-bar">
+  <div class="coffee-action-bar">
     <input
-      placeholder="product name..."
-      class="product-name-input"
+      placeholder="coffee name..."
+      class="coffee-name-input"
       type="text"
-      :value="productNameToCreate"
-      @input="setProductNameToCreate($event.target.value)"
-      @keypress.enter="triggerAddProductAction"
+      :value="coffeeNameToCreate"
+      @input="setCoffeeNameToCreate($event.target.value)"
+      @keypress.enter="triggerAddCoffeeAction"
     />
     <div
-      :class="{ disabled: productCreationPending }"
-      class="create-product-btn"
-      @click="triggerAddProductAction"
+      :class="{ disabled: coffeeCreationPending }"
+      class="create-coffee-btn"
+      @click="triggerAddCoffeeAction"
     >
-      add product
+      add coffee
     </div>
   </div>
 </template>
@@ -22,13 +22,13 @@
 import { mapMutations, mapState, mapActions } from 'vuex'
 
 export default {
-  computed: mapState('products', [
-    'productNameToCreate',
-    'productCreationPending'
+  computed: mapState('coffee', [
+    'coffeeNameToCreate',
+    'coffeeCreationPending'
   ]),
   methods: {
-    ...mapMutations('products', ['setProductNameToCreate']),
-    ...mapActions('products', ['triggerAddProductAction'])
+    ...mapMutations('coffee', ['setCoffeeNameToCreate']),
+    ...mapActions('coffee', ['triggerAddCoffeeAction'])
   }
 }
 </script>
@@ -36,12 +36,12 @@ export default {
 <style lang="scss" scoped>
 @import '@/theme/variables.scss';
 
-.product-action-bar {
+.coffee-action-bar {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .product-name-input {
+  .coffee-name-input {
     padding-left: 5px;
     height: 30px;
     width: 150px;
@@ -52,7 +52,7 @@ export default {
     border-radius: 3px;
   }
 
-  .create-product-btn {
+  .create-coffee-btn {
     cursor: pointer;
     padding: 5px 10px;
     border: 1px solid;
